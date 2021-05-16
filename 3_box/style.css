@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+:root {
+    box-sizing: border-box;
+}
+
+/* Force box-sizing to be inherited. You can convert 
+a 3rd-party element into a content-box when needed by 
+targeting its top-level container */
+
+*,
+::before,                   
+::after {                      
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #eee;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+body * + * {                /* always add margin-top: 0 to any elements that this messes up */
+    margin-top: 1.5em;
+}
+
+header {
+    padding: 1em 1.5em;
+    color: #fff;
+    background-color: #0072b0;
+    border-radius: .5em;
+}
+
+main {
+    display: block;         /* fixes IE bug */
+}
+
+.container {
+    display: flex;
+}
+.main {
+    width: 70%;
+    padding: 1em 1.5em;
+    background-color: #fff;
+    border-radius: .5em;
+}
+
+.sidebar {
+    width: 30%;
+    margin-left: 1.5em;
+    margin-top: 0;
+    padding: 1.5em;
+    background-color: #fff;
+    border-radius: .5em;
+}
+
+.button-link {
+    display: block;
+    padding: 0.5em;
+    color: #fff;
+    background-color: #0090c0;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.sponsor-link {
+    display: block;
+    color: #0072b0;
+    font-weight: bold;
+    text-decoration: none;
+}

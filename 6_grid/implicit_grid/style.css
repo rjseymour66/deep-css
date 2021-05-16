@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+:root {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #709b90;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+body * + * {
+  margin-top: 1.5em;
+}
+
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* auto-fill creates as many tracks as possible without */
+  grid-auto-rows: 1fr;                                         /* violating the minmax() rules. Use auto-fill if you don't want empty tracks */
+  gap: 1em;
+  grid-auto-flow: dense;
+}
+
+.portfolio .featured {
+  grid-row: span 2;
+  grid-column: span 2;
+}
+
+.portfolio > figure {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.portfolio img {
+  flex: 1;
+  object-fit: cover;    /* fill the box without stretching */
+  max-width: 100%;
+}
+
+.portfolio figcaption {
+  padding: 0.3em 0.8em;
+  margin: 0;
+  background-color: rgba(0, 0, 0, .5);
+  color: #fff;
+  text-align: right;
+}

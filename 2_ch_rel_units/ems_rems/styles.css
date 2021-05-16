@@ -1,0 +1,101 @@
+/* NOTES
+
+rems font sizes. Set :root font size as em, all the rest are rems of that em
+   pxs  borders
+   ems  other, including paddings, margins, border radius. Always relative to parent
+
+To get an em size from a pixel size, take the px size you want,
+divide by the inherited px size, and get the em
+    desired-px / inherited-px = Xem
+    EX 10px / 12px = 0.83333em
+
+viewport
+    vh      1/100th of viewport height
+    vw      1/100th of viewport width
+    vmin    1/100th of smaller dimension (w or h)
+    vmax    1/100th of larger dimension (w or h)
+
+    use cases: 
+        Element with h and w 90vmin always displays as 90% of the screen
+        Good for hero images
+
+DO NOT use a unit when defining line height in body
+*/      
+
+:root {                     /* this is the same as html but with a class specificity */
+    font-size: calc(0.5em + 1vw);
+}
+
+body {
+    font-size: 16px;
+    font-family: Helvetica, Arial, sans-serif;
+    line-height: 1.2;
+}
+
+ul {
+    font-size: .8rem;
+}
+
+.slogan {
+    font-size: 1.2em;
+    padding: 1.2em;
+    background-color: #ccc;
+}
+
+.box {
+    padding: 1em;
+    border-radius: 1em;
+    background-color: lightgray;
+}
+.box-small {
+    font-size: 12px;
+}
+.box-large {
+    font-size: 18px;
+}
+
+.panel {
+    font-size: 1rem;                /* has a predictable font size no matter the placement */
+    padding: 1em;
+    border: 1px solid #999;
+    border-radius: 0.5em;
+}
+
+.panel > h2 {
+    margin-top: 0;
+    font-size: 0.8em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.panel.large {
+    font-size: 1.2rem;
+}
+
+.warning {
+    font-size: 1rem;
+    text-shadow: black;
+    padding: 1em;
+    color: black;
+    background-color: rgba(255, 0, 0, .5);
+    border-radius: .5em;
+}
+
+.warning > h2 {
+    float: left;
+    margin-top: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    align-items: center;
+    padding-right: 2em;
+}
+
+.square {
+    width: 90vmin;
+    height: 90vmin;
+    background-color: #369;
+}
+
+.about-us {
+    font-size: 2em;
+}
