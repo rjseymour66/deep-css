@@ -1,0 +1,168 @@
+@charset "UTF-8";
+
+:root {
+    box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #eee;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+body * + * {
+    margin-top: 1.5em;
+}
+
+.container {
+    display: grid;
+    grid-template-areas: "title     title   title"
+                         "nav       nav     nav"
+                         "toc       main    aside"
+                         "footer    footer  footer";
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: repeat(5, auto);
+    gap: .25em;
+    width: 1080px;
+    margin: 0 auto;
+}
+
+header {
+    grid-area: title;
+}
+
+nav {
+    grid-area: nav;
+    margin-top: 0;
+}
+
+.sidebar-left {
+    grid-area: toc;
+    margin-top: 0;
+}
+
+.main {
+    grid-area: main;
+    margin-top: 0;
+}
+
+.sidebar-right {
+    grid-area: aside;
+    margin-top: 0;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.page-heading {
+    margin: 0;
+    background-color: rgb(65, 65, 255);
+    color: white;
+    padding: .5em 1.5em;
+}
+.tile {
+    padding: 1.5em;
+    background-color: #fff;
+}
+
+.tile > :first-child {
+    margin-top: 0;
+}
+
+.tile * + * {
+    margin-top: 1.5em;
+}
+
+.top-nav {
+    display: flex;
+    margin: 0;
+    background-color: red;
+    padding: .5em;
+    list-style-type: none;
+}
+
+.top-nav > li {
+    margin-top: 0;
+}
+
+.top-nav > li > a {
+    display: block;
+    padding: .5em 1.5em;
+    color: white;
+    text-decoration: none;
+}
+.nav-left {
+    margin-right: 10em;
+}
+.nav-right {
+    margin-left: auto;
+}
+
+/* .sidebar-left {
+    display: flex;
+    margin: 0;
+    padding: .5em;
+    list-style-type: none;
+} */
+
+.toc {
+    margin: 0;
+    padding: 0.5em;
+    list-style-type: none;
+}
+
+.toc + li {
+    margin-top: 0;
+}
+
+.toc > li > a {
+    display: block;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+.main {
+    padding: 2em 5em;
+}
+
+.main h3:first-child {
+    margin-top: 0;
+}
+
+.sidebar-right {
+    border-radius: .25em;
+}
+.right-toc {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+}
+
+.right-toc > li {
+    
+}
+
+.right-toc > li > a {
+    display: block;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+a:link {
+    color: black;
+}
+a:visited {
+    color: gray;
+}
+a:hover {
+    color: blue;
+}
+a:active {
+    color: red;
+}
