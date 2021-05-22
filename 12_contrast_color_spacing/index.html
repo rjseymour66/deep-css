@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contrast, Color, and Spacing</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Sansita:wght@800&display=swap" rel="stylesheet"> 
 </head>
 <body>
     <nav class="nav-container">
@@ -65,5 +67,29 @@
             Copyright &copy; 2021 Ink, Inc.
         </div>
     </footer>
+
+    <script type="text/javascript">
+        let html = document.documentElement;
+        let script = document.createElement("script");
+        script.src = "fontfaceobserver.js";
+        script.async = true;
+
+        script.onload = function() {
+            let roboto = new FontFaceObserver("Roboto");
+            let sansita = new FontFaceObserver("Sansita");
+            let timeout = 2000;
+
+            Promise.all([
+                roboto.load(null, timeout),
+                sansita.load(null, timeout)
+            ]).then(function() {
+                html.classList.add("fonts-loaded");
+            }).catch(function (e) {
+                html.classList.add("fonts-failed");
+            });
+        };
+        document.head.appendChild(script);
+
+    </script>
 </body>
 </html>
